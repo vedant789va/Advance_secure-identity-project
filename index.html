@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intelligent System | Secure Identity & Transactions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="badge">Classroom Demo Project</p>
+        <h1>Intelligent System for Secure Identity and Transactions</h1>
+        <p>
+          A smart security platform prototype that combines identity verification,
+          adaptive trust scoring, and fraud-aware transaction intelligence.
+        </p>
+        <div class="hero__stats">
+          <article>
+            <h3 id="statUsers">0</h3>
+            <p>Registered Users</p>
+          </article>
+          <article>
+            <h3 id="statTransactions">0</h3>
+            <p>Transactions Processed</p>
+          </article>
+          <article>
+            <h3 id="statBlocked">0</h3>
+            <p>Risk Alerts Triggered</p>
+          </article>
+        </div>
+      </div>
+      <div class="hero__orb"></div>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>1) Secure Identity Enrollment</h2>
+        <form id="identityForm" class="form-grid">
+          <label>
+            Full Name
+            <input type="text" id="fullName" required placeholder="e.g., Aditi Sharma" />
+          </label>
+          <label>
+            Email
+            <input type="email" id="email" required placeholder="e.g., aditi@example.com" />
+          </label>
+          <label>
+            Device ID
+            <input type="text" id="deviceId" required placeholder="e.g., DVC-9812" />
+          </label>
+          <label>
+            Biometric Match (%)
+            <input type="number" id="biometric" min="50" max="100" value="89" required />
+          </label>
+          <button type="submit">Create Secure Identity</button>
+        </form>
+
+        <div class="result" id="identityResult">
+          Add a user to generate encrypted identity token and trust score.
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>2) Smart Transaction Screening</h2>
+        <form id="txForm" class="form-grid">
+          <label>
+            Select User
+            <select id="txUser" required></select>
+          </label>
+          <label>
+            Amount (INR)
+            <input type="number" id="txAmount" min="1" value="1500" required />
+          </label>
+          <label>
+            Destination
+            <input type="text" id="txDestination" required placeholder="e.g., Merchant-Alpha" />
+          </label>
+          <label>
+            Location
+            <input type="text" id="txLocation" required placeholder="e.g., Bengaluru" />
+          </label>
+          <button type="submit">Analyze & Process</button>
+        </form>
+
+        <div class="result" id="txResult">
+          Submit a transaction to evaluate fraud risk and decision confidence.
+        </div>
+      </section>
+
+      <section class="panel panel-wide">
+        <div class="panel-title-row">
+          <h2>Security Intelligence Dashboard</h2>
+          <button id="seedDemo" class="ghost">Load Demo Data</button>
+        </div>
+        <div class="analytics-grid">
+          <article>
+            <h3>Risk Distribution</h3>
+            <canvas id="riskChart" width="420" height="170"></canvas>
+          </article>
+          <article>
+            <h3>Recent Decisions</h3>
+            <ul id="decisionList" class="scroll-list"></ul>
+          </article>
+          <article>
+            <h3>Immutable Audit Chain</h3>
+            <ul id="auditList" class="scroll-list mono"></ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Built for classroom presentation: Advanced working prototype with identity security,
+      fraud detection, and auditability.
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
